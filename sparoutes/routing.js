@@ -1,0 +1,31 @@
+shopping.config(function($routeProvider){
+ $routeProvider.when("/samsung",{
+        templateUrl:"samsung.html",
+        controller:"samsungCtrl"
+    }).when("/xiaomi",{
+        templateUrl:"xiaomi.html",
+        controller:"xiaomiCtrl"
+    }).when("/apple",{
+        templateUrl:"apple.html",
+        controller:"appleCtrl"
+    }).when("/ipad",{
+        templateUrl:"ipad.html",
+        controller:"ipadctrl"
+    }).when("/micromax",{
+        templateUrl:"micromax.html",
+        controller:"micromaxctrl"
+    }).when("/hp",{
+        templateUrl:"hp.html",
+        controller:"hpctrl"
+    }).when("/bravia",{
+        templateUrl:"bravia.html",
+        controller:"braviactrl"
+    }).when("/lg",{
+        templateUrl:"lg.html",
+        controller:"lgctrl"
+    }).when("/lloyd",{
+        templateUrl:"lloyd.html",
+        controller:"lloydctrl"
+    })/*.otherwise({template:"Error Page , No Match Found"
+        ,redirectTo:"/"});*/
+});
