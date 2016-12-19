@@ -1,0 +1,1 @@
+var shopping = angular.module("shopping",['ngRoute']);

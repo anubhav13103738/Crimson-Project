@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../libs/angular.min%20(1).js"></script>
+    <script src="../json/Dell%20Inspiron%203558%20Notebook%20(5th%20Gen%20Intel%20Core%20i3-%204GB%20RAM-%201TB%20HDD-%2039.62%20cm(15.6)-%20Ubuntu)%20(Black)output.json"></script>
+    <script src="../js/dellinspiron3558/inspiron3558.js"></script>
+    <script src="../js/dellinspiron3558/inspiron3558control.js"></script>
+    <script src="../js/dellinspiron3558/inspiron3558factory.js"></script>
+</head>
+
+
+
+<body  ng-app="inspiron3558" ng-controller="inspiron3558control">
+<!--navbar start-->
+<nav class="navbar navbar-static-top bg no-padding no-margin">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="images/valor2_burned.png" class="img-logo">
+            <a href="#" class="navbar-brand white">CrimSon</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+            <ul class="nav navbar-nav butto">
+                <li><a href="index.html" class="white">Home</a></li>
+                <li><a ng-click="goToAbout()" class="white">About</a></li>
+                <li><a ng-click="goToContact()" class="white">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu bg c-button">
+                        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+                        <li class="divider"></li>
+                        <li><a href="category.html" class="c-button">More</a></li>
+
+                        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navbar ends-->
+<div class="container">
+
+    <table class="table">
+        <tr><td ng-repeat="object in redmi"><img ng-src="{{object.image}}"/><br><h1 style="color: crimson">{{object.name}}</h1><br><span><h3>Description:</h3></span><h3>{{object.description}}</h3><br><span><h4>Amazon Price: Rs.{{object.price}}                         <a href="{{object.amazon_url}}" ><img src="../images/amazon.png"></a></h4></span><br><span><h4>Snapdeal Price: Rs.{{object.sd_price}}                       <a href="{{object.snapdeal_url}}"><img src="../images/snapdeal.jpeg"></a> </h4></span><br><span><h4>Ebay Price:{{object.ebay_price}}                         <a href="{{object.ebay_url}}"><img src="../images/ebay.jpeg"></a> </h4></span><br><span><h4>Ratings:{{object.rating}}</h4></span></td></tr>
+    </table>
+    <button onclick="stopspeech()" class="btn btn-danger">Stop Speech</button>
+    <button onclick="pause()" class="btn btn-danger">pause Speech</button>
+    <button onclick="resume()" class="btn btn-danger">resume Speech</button>
+    <div class="row">
+
+        <div id="about" class="col-md-6">
+            <h2>About Us</h2>
+            <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="contact">Contact</h2>
+            <address>
+                Crimson, A-10,<br>
+                Sector-62, Noida-201309<br>
+                Mob:99904315502<br>
+                Email:annu_m12@yahoo.com
+
+            </address>
+
+        </div>
+    </div>
+</div>
+<!--footer start-->
+
+<footer id="foot">
+    <div class="site-footer">
+        <div class="container">
+
+            <div class="bottom-footer">
+                <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="xiaomi%20redmi%20note%203.html3.html">Home</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a ng-click="goToAbout">About</a></li>
+                        <li><a ng-click="goToContact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--footer end-->
+<script type="text/javascript" src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var jsonproduct=
+    {
+        "amazon_url": "http://www.amazon.in/gp/product/B01GHGLL2G/ref=s9_acsd_ri_bw_c_x_1?pf_rd_m=A1VBAL9TL5WCBF&pf_rd_s=merchandised-search-7&pf_rd_r=05AZ9M25RST887PJCMPP&pf_rd_t=101&pf_rd_p=00600dcf-3c0f-4d68-b3a4-c57df8f5892f&pf_rd_i=1375424031",
+        "snapdeal_url": "https://www.snapdeal.com/product/dell-inspiron-3558-notebook-z565155uin9/619612846170#bcrumbSearch:Dell%20Inspiron%203558",
+        "ebay_url": "http://www.ebay.in/itm/Dell-Inspiron-15-3558-Laptop-Core-i3-5th-Gen-4GB-1TB-Ubuntu-Box-Open-/152261757737?hash=item2373820b29:g:Z4sAAOSwNRdX71mL",
+        "name": "Dell Inspiron 3558 Notebook (5th Gen Intel Core i3- 4GB RAM- 1TB HDD- 39.62 cm(15.6)- Ubuntu) (Black)",
+        "description": "2GHz Intel 5th Gen Core i3 processor\n\t\t\t\t\t\n\t\t\t\t\t\t 4GB DDR3L RAM\n\t\t\t\t\t\n\t\t\t\t\t\t 1TB hard drive\n\t\t\t\t\t\n\t\t\t\t\t\t 15.6-inch screen, Intel HD Graphics 5500\n\t\t\t\t\t\n\t\t\t\t\t\t Ubuntu Linux operating system\n\t\t\t\t\t\n\t\t\t\t\t\t HD (720p) capable webcam, microphone\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n                \n                 \t\n               \n               \n\t\t\t\n\t\t\t\n\t\t\n\n\t\t\n\n\t\t\n\t\t\t\n\t\t\t\n\t\t\t    ›\n\t\t\t    See more product details",
+        "price": "",
+        "sd_price": "26,899",
+        "ebay_price": "Rs. 25,990.00",
+        "image": "http://snatchit.pk/wp-content/uploads/2016/08/dpreal-800x600.jpg",
+        "rating": "3.4 out of 5 stars"
+    }
+
+    //var json = JSON.parse(jsonproduct);
+    var details=jsonproduct.name+' Description:'+jsonproduct.description+' Amazon Price:'+jsonproduct.price+' Snapdeal Price:'+jsonproduct.sd_price+' Ebay Price:'+jsonproduct.ebay_price+' User Ratings'+jsonproduct.rating;
+    //console.log('details');
+    var msg = new SpeechSynthesisUtterance(details);
+    window.speechSynthesis.speak(msg);
+    function stopspeech(){
+        window.speechSynthesis.cancel();
+    }
+    function pause(){
+        window.speechSynthesis.pause();
+    }
+    function resume(){
+        window.speechSynthesis.resume();
+    }
+</script>
+</body>
+</html>

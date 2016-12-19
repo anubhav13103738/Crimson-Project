@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../libs/angular.min%20(1).js"></script>
+    <script src="../json/htcdesire10output.json"></script>
+    <script src="../js/htcdesire10/htcdesire10.js"></script>
+    <script src="../js/htcdesire10/htcdesire10control.js"></script>
+    <script src="../js/htcdesire10/htcdesire10factory.js"></script>
+</head>
+
+
+
+<body  ng-app="htcdesire10" ng-controller="htcdesire10control">
+<!--navbar start-->
+<nav class="navbar navbar-static-top bg no-padding no-margin">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="images/valor2_burned.png" class="img-logo">
+            <a href="#" class="navbar-brand white">CrimSon</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+            <ul class="nav navbar-nav butto">
+                <li><a href="index.html" class="white">Home</a></li>
+                <li><a ng-click="goToAbout()" class="white">About</a></li>
+                <li><a ng-click="goToContact()" class="white">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu bg c-button">
+                        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+                        <li class="divider"></li>
+                        <li><a href="category.html" class="c-button">More</a></li>
+
+                        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navbar ends-->
+<div class="container">
+
+    <table class="table">
+        <tr><td ng-repeat="object in redmi"><img ng-src="{{object.image}}"/><br><h1 style="color: crimson">{{object.name}}</h1><br><span><h3>Description:</h3></span><h3>{{object.description}}</h3><br><span><h4>Amazon Price: Rs.{{object.price}}                         <a href="{{object.amazon_url}}" ><img src="../images/amazon.png"></a></h4></span><br><span><h4>Snapdeal Price: Rs.{{object.sd_price}}                       <a href="{{object.snapdeal_url}}"><img src="../images/snapdeal.jpeg"></a> </h4></span><br><span><h4>Ebay Price:{{object.ebay_price}}                         <a href="{{object.ebay_url}}"><img src="../images/ebay.jpeg"></a> </h4></span><br><span><h4>Ratings:{{object.rating}}</h4></span></td></tr>
+    </table>
+    <button onclick="stopspeech()" class="btn btn-danger">Stop Speech</button>
+    <button onclick="pause()" class="btn btn-danger">pause Speech</button>
+    <button onclick="resume()" class="btn btn-danger">resume Speech</button>
+    <div class="row">
+
+        <div id="about" class="col-md-6">
+            <h2>About Us</h2>
+            <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="contact">Contact</h2>
+            <address>
+                Crimson, A-10,<br>
+                Sector-62, Noida-201309<br>
+                Mob:99904315502<br>
+                Email:annu_m12@yahoo.com
+
+            </address>
+
+        </div>
+    </div>
+</div>
+<!--footer start-->
+
+<footer id="foot">
+    <div class="site-footer">
+        <div class="container">
+
+            <div class="bottom-footer">
+                <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="xiaomi%20redmi%20note%203.html3.html">Home</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a ng-click="goToAbout">About</a></li>
+                        <li><a ng-click="goToContact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--footer end-->
+<script type="text/javascript" src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var jsonproduct=
+    {
+        "amazon_url": "http://www.amazon.in/HTC-Desire-Lifestyle-Stone-Black/dp/B01FM7H4GS/ref=sr_1_1?s=electronics&rps=1&ie=UTF8&qid=1476520556&sr=1-1&th=1",
+        "snapdeal_url": "https://www.snapdeal.com/product/htc-desire-830-32gb-sprinkle/678965079589#bcrumbSearch:HTC%20Desire%2010%20Lifestyle%20%28Stone%20Black%2C%2032%20GB",
+        "ebay_url": "http://www.ebay.in/itm/HTC-Desire-825-Sprinkle-White-Dual-Sim-2-GB-Ram-13-MP-Camera-Smart-Phone-/112159512990?hash=item1a1d3a599e:g:WBYAAOSwIgNXi~Yr",
+        "name": "HTC Desire 10 Lifestyle (Stone Black, 32 GB) - with Hi-res earphones",
+        "description": "13MP primary camera with auto focus, BSI sensor, ƒ/2.2 aperture and 28mm focal length, HDR mode, video pic, panorama mode, continuous shooting, voice selfie, live make-up and 5MP front facing camera\n\t\t\t\t\t\n\t\t\t\t\t\t 13.97 centimeters (5.5-inch) TFT Super LCD Gorilla Glass capacitive touchscreen with 1280 x 720 pixels resolution and 267 ppi pixel density\n\t\t\t\t\t\n\t\t\t\t\t\t Android v6.0.1 Marshmallow operating system with 1.6GHz Qualcomm Snapdragon 400 quad core processor, 3GB RAM, 32GB internal memory expandable up to 2TB and dual SIM (nano+nano) dual-standby (4G+2G)\n\t\t\t\t\t\n\t\t\t\t\t\t 2700mAH lithium-ion battery providing talk-time of 24 hours on 3G and standby time of 672 hours on 3G networks\n\t\t\t\t\t\n\t\t\t\t\t\t Hi-resolution audio earphones, clear shield back panel and ultra-hard protective glass cover available in box\n\t\t\t\t\t\n\t\t\t\t\t\t 1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n                \n                 \t\n               \n               \n\t\t\t\n\t\t\t\n\t\t\n\n\t\t\n\n\t\t\n\t\t\t\n\t\t\t\n\t\t\t    ›\n\t\t\t    See more product details",
+        "price": "15,990",
+        "sd_price": "19,978",
+        "ebay_price": "Rs. 19,999.00",
+        "image": "http://cdn.ndtv.com/tech/images/htc_desire_10_evleaks.jpg",
+        "rating": "2.9 out of 5 stars"
+    }
+
+    //var json = JSON.parse(jsonproduct);
+    var details=jsonproduct.name+' Description:'+jsonproduct.description+' Amazon Price:'+jsonproduct.price+' Snapdeal Price:'+jsonproduct.sd_price+' Ebay Price:'+jsonproduct.ebay_price+' User Ratings'+jsonproduct.rating;
+    //console.log('details');
+    var msg = new SpeechSynthesisUtterance(details);
+    window.speechSynthesis.speak(msg);
+    function stopspeech(){
+        window.speechSynthesis.cancel();
+    }
+    function pause(){
+        window.speechSynthesis.pause();
+    }
+    function resume(){
+        window.speechSynthesis.resume();
+    }
+</script>
+</body>
+</html>

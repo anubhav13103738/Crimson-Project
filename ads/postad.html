@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../libs/angular.min.js"></script>
+    <script src="../libs/angular-route.min.js"></script>
+    <title>Post your ad</title>
+</head>
+<body>
+<nav class="navbar navbar-static-top bg no-padding no-margin">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="images/valor2_burned.png" class="img-logo">
+            <a href="#" class="navbar-brand white">CrimSon</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+            <ul class="nav navbar-nav butto">
+                <li><a href="index.html" class="white">Home</a></li>
+                <li><a ng-click="goToAbout()" class="white">About</a></li>
+                <li><a ng-click="goToContact()" class="white">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu bg c-button">
+                        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+                        <li class="divider"></li>
+                        <li><a href="category" class="c-button">More</a></li>
+
+                        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--main starts-->
+<div class="center_div">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-0">
+            <form action="/postproduct" method="post" enctype = "multipart/form-data">
+                <div class="form-group">
+                    <h5> <label for="productname">Name of your product:</label></h5>
+                    <input style="width: 100%" type="text" placeholder="Product Name" name="productName" id="productname">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="productDescription">Product description:</label></h5>
+                    <!--<input style="width: 100%" type="textarea" name="email" id="productDesc">-->
+                    <textarea style="width: 100%" placeholder="Product Description" id="productDescription" name="productDesc"></textarea>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="Price">Price:</label></h5>
+                    <input style="width: 100%" placeholder="Price" type="text" name="price" id="Price" required>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="sellername">Your Name:</label></h5>
+                    <input style="width: 100%" placeholder="Your Name" type="text" name="sellerName" id="sellername" required>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="selleremail">Email:</label></h5>
+                    <input style="width: 100%" placeholder="Your Email" type="email" name="mailid" id="selleremail" required>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="sellerphone">Mobile:</label></h5>
+                    <input style="width: 100%" type="tel" pattern="[9,8,7]{1}[0-9]{9}" name="phone" id="sellerphone" placeholder="enter 10 digit mobile number" minlength="10" maxlength="10" required>
+                    <br>
+                </div>
+                <div class="form-group">
+                    <h5><label for="picture">Picture:</label></h5>
+                    <input style="width: 100%" placeholder="only jpg/jpeg file upload" type="file" name="image" id="picture" required>
+                    <br>
+                </div>
+                <button class="btn btn-danger" type="submit" value="submit">Post Ad</button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--main ends-->
+
+<!--about, feedback etc start-->
+<div class="container">
+
+    <div class="row">
+
+        <div id="about" class="col-md-6">
+            <h2>About Us</h2>
+            <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="contact">Contact</h2>
+            <address>
+                Crimson, A-10,<br>
+                Sector-62, Noida-201309<br>
+                Mob:99904315502<br>
+                Email:annu_m12@yahoo.com
+
+            </address>
+
+        </div>
+    </div>
+</div>
+<!--about ends-->
+<!--footer start-->
+
+<footer id="foot">
+    <div class="site-footer">
+        <div class="container">
+
+            <div class="bottom-footer">
+                <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a ng-click="goToAbout">About</a></li>
+                        <li><a ng-click="goToContact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

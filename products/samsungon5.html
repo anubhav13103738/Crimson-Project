@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../libs/angular.min%20(1).js"></script>
+    <script src="../json/Samsung%20Galaxy%20On5%20SM-G550F,%20Goldoutput.json"></script>
+    <script src="../js/samsungon5/samsungon5.js"></script>
+    <script src="../js/samsungon5/samsungon5control.js"></script>
+    <script src="../js/samsungon5/samsungon5factory.js"></script>
+</head>
+
+
+
+<body  ng-app="samsungon5" ng-controller="samsungon5control">
+<!--navbar start-->
+<nav class="navbar navbar-static-top bg no-padding no-margin">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="images/valor2_burned.png" class="img-logo">
+            <a href="#" class="navbar-brand white">CrimSon</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+            <ul class="nav navbar-nav butto">
+                <li><a href="index.html" class="white">Home</a></li>
+                <li><a ng-click="goToAbout()" class="white">About</a></li>
+                <li><a ng-click="goToContact()" class="white">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu bg c-button">
+                        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+                        <li class="divider"></li>
+                        <li><a href="category.html" class="c-button">More</a></li>
+
+                        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navbar ends-->
+<div class="container">
+
+    <table class="table">
+        <tr><td ng-repeat="object in redmi"><img ng-src="{{object.image}}"/><br><h1 style="color: crimson">{{object.name}}</h1><br><span><h3>Description:</h3></span><h3>{{object.description}}</h3><br><span><h4>Amazon Price: Rs.{{object.price}}                         <a href="{{object.amazon_url}}" ><img src="../images/amazon.png"></a></h4></span><br><span><h4>Snapdeal Price: Rs.{{object.sd_price}}                       <a href="{{object.snapdeal_url}}"><img src="../images/snapdeal.jpeg"></a> </h4></span><br><span><h4>Ebay Price:{{object.ebay_price}}                         <a href="{{object.ebay_url}}"><img src="../images/ebay.jpeg"></a> </h4></span><br><span><h4>Ratings:{{object.rating}}</h4></span></td></tr>
+    </table>
+    <button onclick="stopspeech()" class="btn btn-danger">Stop Speech</button>
+    <button onclick="pause()" class="btn btn-danger">pause Speech</button>
+    <button onclick="resume()" class="btn btn-danger">resume Speech</button>
+    <div class="row">
+
+        <div id="about" class="col-md-6">
+            <h2>About Us</h2>
+            <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="contact">Contact</h2>
+            <address>
+                Crimson, A-10,<br>
+                Sector-62, Noida-201309<br>
+                Mob:99904315502<br>
+                Email:annu_m12@yahoo.com
+
+            </address>
+
+        </div>
+    </div>
+</div>
+<!--footer start-->
+
+<footer id="foot">
+    <div class="site-footer">
+        <div class="container">
+
+            <div class="bottom-footer">
+                <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="xiaomi%20redmi%20note%203.html3.html">Home</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a ng-click="goToAbout">About</a></li>
+                        <li><a ng-click="goToContact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--footer end-->
+<script type="text/javascript" src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var jsonproduct=
+    {
+        "amazon_url": "http://www.amazon.in/Samsung-Galaxy-On5-SM-G550F-Gold/dp/B01D1A5096/ref=sr_1_5?s=electronics&ie=UTF8&qid=1476033898&sr=1-5&keywords=samsung+on5",
+        "snapdeal_url": "https://www.snapdeal.com/product/samsung-on5-8gb/627055373428#bcrumbSearch:samsung%20on%205|bcrumbLabelId:12",
+        "ebay_url": "http://www.ebay.in/itm/SAMSUNG-Galaxy-On5-Gold-8-GB-1-Year-Manufacturer-Warrnty-/222272804419?hash=item33c07dd643:g:HgYAAOSwCGVX9inU",
+        "name": "Samsung Galaxy On5 SM-G550F, Gold",
+        "description": "Rear Camera with Flash\n\t\t\t\t\t\n\t\t\t\t\t\t 1.5 GB RAM\n\t\t\t\t\t\n\t\t\t\t\t\t Internal Storage 8 GB, Dual SIM (Micro-SIM, dual stand-by), TFT capacitive touchscreen, 16M color depth, 720 x 1280 pixels\n\t\t\t\t\t\n\t\t\t\t\t\t Android OS, V5.1 (Lollipop)\n\t\t\t\t\t\n\t\t\t\t\t\t Primary camera 8 MP, f/2.2, autofocus, LED flash, Video 1080p@30fps, Secondary camera 5 MP, f/2.2\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n                \n                 \t\n               \n               \n\t\t\t\n\t\t\t\n\t\t\n\n\t\t\n\n\t\t\n\t\t\t\n\t\t\t\n\t\t\t    ›\n\t\t\t    See more product details",
+        "price": "8,890",
+        "sd_price": "8,785",
+        "ebay_price": "Rs. 9,850.00",
+        "image": "http://files.gsmchoice.com/news/6311/on5-22822.jpg",
+        "rating": "3.8 out of 5 stars"
+    };
+
+    var details=jsonproduct.name+' Description:'+jsonproduct.description+' Amazon Price:'+jsonproduct.price+' Snapdeal Price:'+jsonproduct.sd_price+' Ebay Price:'+jsonproduct.ebay_price+' User Ratings'+jsonproduct.rating;
+    //console.log('details');
+    var msg = new SpeechSynthesisUtterance(details);
+    window.speechSynthesis.speak(msg);
+    function stopspeech(){
+        window.speechSynthesis.cancel();
+    }
+    function pause(){
+        window.speechSynthesis.pause();
+    }
+    function resume(){
+        window.speechSynthesis.resume();
+    }
+</script>
+</body>
+</html>

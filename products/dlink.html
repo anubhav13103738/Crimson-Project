@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../libs/angular.min%20(1).js"></script>
+    <script src="../json/dlinkoutput.json"></script>
+    <script src="../js/dlink/dlink.js"></script>
+    <script src="../js/dlink/dlinkcontrol.js"></script>
+    <script src="../js/dlink/dlinkfactory.js"></script>
+</head>
+
+
+
+<body  ng-app="dlink" ng-controller="dlinkcontrol">
+<!--navbar start-->
+<nav class="navbar navbar-static-top bg no-padding no-margin">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="images/valor2_burned.png" class="img-logo">
+            <a href="#" class="navbar-brand white">CrimSon</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+            <ul class="nav navbar-nav butto">
+                <li><a href="index.html" class="white">Home</a></li>
+                <li><a ng-click="goToAbout()" class="white">About</a></li>
+                <li><a ng-click="goToContact()" class="white">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu bg c-button">
+                        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+
+                        <li class="divider"></li>
+                        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+                        <li class="divider"></li>
+                        <li><a href="category.html" class="c-button">More</a></li>
+
+                        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--navbar ends-->
+<div class="container">
+
+    <table class="table">
+        <tr><td ng-repeat="object in redmi"><img ng-src="{{object.image}}"/><br><h1 style="color: crimson">{{object.name}}</h1><br><span><h3>Description:</h3></span><h3>{{object.description}}</h3><br><span><h4>Amazon Price: Rs.{{object.price}}                         <a href="{{object.amazon_url}}" ><img src="../images/amazon.png"></a></h4></span><br><span><h4>Snapdeal Price: Rs.{{object.sd_price}}                       <a href="{{object.snapdeal_url}}"><img src="../images/snapdeal.jpeg"></a> </h4></span><br><span><h4>Ebay Price:{{object.ebay_price}}                         <a href="{{object.ebay_url}}"><img src="../images/ebay.jpeg"></a> </h4></span><br><span><h4>Ratings:{{object.rating}}</h4></span></td></tr>
+    </table>
+    <button onclick="stopspeech()" class="btn btn-danger">Stop Speech</button>
+    <button onclick="pause()" class="btn btn-danger">pause Speech</button>
+    <button onclick="resume()" class="btn btn-danger">resume Speech</button>
+    <div class="row">
+
+        <div id="about" class="col-md-6">
+            <h2>About Us</h2>
+            <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+        </div>
+        <div class="col-md-6">
+            <h2 id="contact">Contact</h2>
+            <address>
+                Crimson, A-10,<br>
+                Sector-62, Noida-201309<br>
+                Mob:99904315502<br>
+                Email:annu_m12@yahoo.com
+
+            </address>
+
+        </div>
+    </div>
+</div>
+<!--footer start-->
+
+<footer id="foot">
+    <div class="site-footer">
+        <div class="container">
+
+            <div class="bottom-footer">
+                <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+                <div class="col-md-7">
+                    <ul class="footer-nav">
+                        <li><a href="xiaomi%20redmi%20note%203.html3.html">Home</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                        <li><a ng-click="goToAbout">About</a></li>
+                        <li><a ng-click="goToContact">Contact Us</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--footer end-->
+<script type="text/javascript" src="../bootstrap/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var jsonproduct=
+    {
+        "amazon_url": "http://www.amazon.in/D-Link-Dir-600M-Broadband-Wireless-Router/dp/B00JE6HMNY/ref=sr_1_1?s=electronics&ie=UTF8&qid=1476524817&sr=1-1&keywords=dlink",
+        "snapdeal_url": "https://www.snapdeal.com/product/dlink-dir600m-wireless-n150-home/625069392643#bcrumbSearch:D-Link%20Dir-600M%20Broadband%20Wireless%20Router",
+        "ebay_url": "http://www.ebay.in/itm/1X-New-D-Link-Dir-600M-Broadband-Wireless-Router-D-Link-Dir-600M-Routers-/172372175336?hash=item28222ea9e8:g:u3kAAOSw8gVX~dbF",
+        "name": "D-Link Dir-600M Broadband Wireless Router",
+        "description": "Input Type RJ-45 (Ethernet Cable) supported by neighbourhood cable broadband ISPs such as Hathway, ACT, Tikona, Airtel Fibrenet, MyWorld, Nextra, Siti Cable, You Broadband, Spectranet etc.\n\t\t\t\t\t\n\t\t\t\t\t\t This Router Does Not Include Modem and works well with Cable Broadbands\n\t\t\t\t\t\n\t\t\t\t\t\t 150 Mbps Wireless Speed\n\t\t\t\t\t\n\t\t\t\t\t\t 1 WAN Port and 1 External Antenna\n\t\t\t\t\t\n\t\t\t\t\t\t WPA/WPA2 Encryption\n\t\t\t\t\t\n\t\t\t\t\t\t 3 Year Warranty\n\t\t\t\t\t\n\t\t\t\t\t\t 1 10/100Base-TX WAN port\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\t\n                \n                 \t\n               \n               \n\t\t\t\n\t\t\t\n\t\t\n\n\t\t\n\t\t\t\n\t\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t1 External Antenna\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t4 10/100Base-TX LAN ports.\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\n\t\t\t\tShow More",
+        "price": "745",
+        "sd_price": "839",
+        "ebay_price": "Rs. 699.00",
+        "image": "http://www.technicapc.com/2640/d-link-dir-605l-300mbps-wireless-router.jpg",
+        "rating": "4.1 out of 5 stars"
+    }
+
+    //var json = JSON.parse(jsonproduct);
+    var details=jsonproduct.name+' Description:'+jsonproduct.description+' Amazon Price:'+jsonproduct.price+' Snapdeal Price:'+jsonproduct.sd_price+' Ebay Price:'+jsonproduct.ebay_price+' User Ratings'+jsonproduct.rating;
+    //console.log('details');
+    var msg = new SpeechSynthesisUtterance(details);
+    window.speechSynthesis.speak(msg);
+    function stopspeech(){
+        window.speechSynthesis.cancel();
+    }
+    function pause(){
+        window.speechSynthesis.pause();
+    }
+    function resume(){
+        window.speechSynthesis.resume();
+    }
+</script>
+</body>
+</html>

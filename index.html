@@ -1,0 +1,203 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crimson-The next level</title>
+  <base href="/" />
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="libs/angular.min.js"></script>
+  <script src="libs/angular-route.min.js"></script>
+  <script src="js/app/app.js"></script>
+  <script src="server/server.json"></script>
+  <script src="server/xiaomiData.json"></script>
+  <script src="server/appleData.json"></script>
+  <script src="js/controllers/mainController.js"></script>
+  <script src="js/factories/samfactory.js"></script>
+  <script src="js/factories/applefactory.js"></script>
+  <script src="js/factories/xiaomifactory.js"></script>
+  <script src="js/controllers/appleController.js"></script>
+  <script src="js/controllers/xiaomiController.js"></script>
+  <script src="js/controllers/samsungController.js"></script>
+  <script src="server/ipad.json"></script>
+  <script src="js/controllers/ipadController.js"></script>
+  <script src="js/factories/ipadfactory.js"></script>
+  <script src="server/micromax.json"></script>
+  <script src="js/controllers/micromaxController.js"></script>
+  <script src="js/factories/micromaxfactory.js"></script>
+  <script src="server/hp.json"></script>
+  <script src="js/controllers/hpController.js"></script>
+  <script src="js/factories/hpfactory.js"></script>
+  <script src="server/bravia.json"></script>
+  <script src="js/controllers/braviaController.js"></script>
+  <script src="js/factories/braviafactory.js"></script>
+  <script src="server/lg.json"></script>
+  <script src="js/controllers/lgController.js"></script>
+  <script src="js/factories/lgfactory.js"></script>
+  <script src="server/llyod.json"></script>
+  <script src="js/controllers/lloydController.js"></script>
+  <script src="js/factories/lloydfactory.js"></script>
+  <script src="sparoutes/routing.js"></script>
+ </head>
+ 
+ 
+ 
+ <body ng-app="shopping" ng-controller="maincontroller">
+ <!--navbar start-->
+  <nav class="navbar navbar-static-top bg no-padding no-margin">
+   <div class="container-fluid">
+   <div class="navbar-header">
+   <button type="button" class="navbar-toggle nav-bar-stylo" data-toggle="collapse" data-target="#bs-crimson-navbar-collapse-1">
+    <span class="sr-only">Toggle Navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+   </button>
+   <img src="images/valor2_burned.png" class="img-logo">
+    <a href="#" class="navbar-brand white">CrimSon</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-right" id="bs-crimson-navbar-collapse-1">
+     <ul class="nav navbar-nav butto">
+      <li><a href="index.html" class="white">Home</a></li>
+      <li><a ng-click="goToAbout()" class="white">About</a></li>
+      <li><a ng-click="goToContact()" class="white">Contact</a></li>
+      <li class="dropdown">
+      <a href="#" class="dropdown-toggle white" data-toggle="dropdown">Products<b class="caret"></b></a>
+       <ul class="dropdown-menu bg c-button">
+        <li><a ng-click="mob()" class="c-button">Smartphones</a></li>
+        
+        <li class="divider"></li>
+         <li><a ng-click="tab()" class="c-button">Tablets</a></li>
+          
+          <li class="divider"></li>
+        <li><a ng-click="tv()" class="c-button">LED Smart Tv</a></li>
+          <li class="divider"></li>
+        <li><a href="category" class="c-button">More</a></li>
+        <li class="divider"></li>
+        <li><a href="login" class="c-button"></a></li>
+        
+        <!--<li><a onclick="openNav()" class="c-button">Side</a></li>-->
+        
+       </ul>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!--navbar ends-->
+  <!--sidebar starts-->
+  <a ng-href="#/"></a>
+  <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a ng-href ="#/samsung" ng-show="mobi">Samsung</a>
+  <a ng-href ="#/xiaomi" ng-show="mobi">Xiaomi</a>
+  <a ng-href ="#/apple" ng-show="mobi">Apple</a>
+  <a ng-href ="#/ipad" ng-show="tabi">I-Pad</a>
+  <a ng-href ="#/micromax" ng-show="tabi">Micromax</a>
+  <a ng-href ="#/hp" ng-show="tabi">HP</a>
+  <a ng-href ="#/bravia" ng-show="tvi">Bravia</a>
+  <a ng-href ="#/lg" ng-show="tvi">LG curved Tv</a>
+  <a ng-href ="#/lloyd" ng-show="tvi">lloyd</a>
+  
+</div>
+ 
+  
+  <!--sidebar ends-->
+  <!--carousel start-->
+  <!--main starts-->
+  
+<div id="main">
+  <div id="mycarousel" class="carousel slide no-margin no-padding" data-ride="carousel" data-interval="3500" data-pause="none">
+
+   <ol class="carousel-indicators">
+
+    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#mycarousel" data-slide-to="1"></li>
+    <li data-target="#mycarousel" data-slide-to="2"></li>
+   </ol>
+   <div class="carousel-inner">
+    <div class="item active">
+     <img src="images/led.jpg" alt="led" class="img-responsive">
+     <div class="carousel-caption">
+      <h3>Smart Tv</h3>
+     </div>
+    </div>
+
+    <div class="item">
+     <img src="images/tablets2.png" alt="tablets" class="img-responsive">
+     <div class="carousel-caption">
+      <h3>Tablets</h3>
+     </div>
+    </div>
+
+    <div class="item">
+     <img src="images/mobile.jpg" alt="mobile" class="img-responsive">
+     <div class="carousel-caption">
+      <h3>Smartphones</h3>
+     </div>
+    </div>
+   </div>
+   <a class="carousel-control left" href="#mycarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+   </a>
+
+   <a class="carousel-control right" href="#mycarousel" data-slide="next">
+    <span class="icon-next"></span>
+   </a>
+  </div>
+  <!--carousel ends-->
+  <div class="container"><ng-view></ng-view></div>
+  <!--about, feedback etc start-->
+  <div class="container">
+
+   <div class="row">
+
+    <div id="about" class="col-md-6">
+     <h2>About Us</h2>
+     <p>We are the ones who would like to help customers with all their shopping related necessties. We are here to guide them with all the information they seek to best of ur knowledge.</p>
+    </div>
+    <div class="col-md-6">
+     <h2 id="contact">Contact</h2>
+     <address>
+      Crimson, A-10,<br>
+      Sector-62, Noida-201309<br>
+      Mob:99904315502<br>
+      Email:annu_m12@yahoo.com
+      
+     </address>
+     
+    </div>
+   </div>
+  </div>
+  </div><!--main end-->
+ 
+ 
+  <!--about, feedback etc end-->
+  <!--footer start-->
+
+  <footer id="foot">
+   <div class="site-footer">
+   <div class="container">
+   
+    <div class="bottom-footer">
+     <div class="col-md-5">@copyright Anubhav Mishra 2016</div>
+     <div class="col-md-7">
+         <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Terms & conditions</a></li>
+          <li><a ng-click="goToAbout">About</a></li>
+          <li><a ng-click="goToContact">Contact Us</a></li>
+         </ul>
+
+     </div>
+    </div>
+   </div>
+    </div>
+  </footer>
+ 
+  <!--footer end-->
+  <script type="text/javascript" src="bootstrap/js/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+ </body>
+ </html>

@@ -1,0 +1,160 @@
+.white{
+ color: white;
+}
+.bg{
+ background-color: crimson;
+}
+
+.center_div{
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 37px;
+    width:80% /* value of your choice which suits your alignment */
+}
+
+.margi{
+    margin-top: 111px;
+    margin-bottom: 100px;
+}
+.butto li a:hover{
+ background-color: #990026;
+ color: white;
+}
+
+.hov:hover{
+    color: crimson;
+    text-decoration: none;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #990026;
+    border-color: #990026;
+}
+a:focus, a:hover {
+    color: white;
+ 
+}
+a:hover {
+   cursor:pointer;
+ 
+}
+h1{
+ color: crimson;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+     background-color: #990026; 
+}
+.c-button li a{
+ color:white;
+}
+.dropdown a:active{
+ background-color: #990026;
+}
+.nav-bar-stylo{
+ border: 1px solid white;
+}
+.img-logo{
+ height:40px;
+ width:40px;
+ float:left; 
+ margin:5px;
+}
+.no-padding{
+ padding: 0px;
+}
+.no-margin{
+ margin: 0px;
+}
+.c-button li span{
+ padding-left: 20px;
+ color: white;
+}
+.c-button li span:hover{
+ background-color: #111;
+}
+.site-footer{
+ background-color: crimson;
+ color: white;
+ padding-top: 10px;
+ margin-top: 0px;
+ z-index: 100;
+}
+
+.bottom-footer{
+ background-color: crimson;
+ margin-top: 0px;
+ padding-top: 10px;
+ border-top: 1px solid white;
+}
+.footer-nav{
+ padding-right: 75px;
+ text-align: right;
+ list-style: none;
+}
+.footer-nav li{
+ display: inline;
+ padding: 0px 10px;
+}
+.footer-nav li a{
+ color: white;
+}
+.footer-nav li:not(:first-child):before{
+ content: '|';
+ padding: 0px 10px;
+}
+/*sidebar*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 100px;
+}
+#main{
+ margin: 0px;
+ padding: 0px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.closebtn {
+    margin-top: 50px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    
+}
+.l{
+    color:crimson;
+}
+.l:hover{
+    color:#990000;
+    text-decoration: none;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
