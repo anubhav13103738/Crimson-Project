@@ -20,4 +20,4 @@ to run the project :
 4.open localhost:8081 in your browser
 
 
-*Important Note:please note that you must have node.js installed on your system otherwise npm commands won't work.*
+*Important Note:please make sure that you have node.js installed on your system otherwise npm commands won't work.*
