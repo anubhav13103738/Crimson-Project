@@ -1,7 +1,5 @@
 # Crimson-Project
-Crimson project is a meanstack implemented web-app which includes web-scraping and crud operations using node.js,mongodb,angularjs and express.
-
-
+Crimson project is a meanstack implemented web-app which includes web-scraping and crud operations using node.js,mongodb,angularjs and express.It is a price comparison website which compares prices of few products from snapdeal,amazon and ebay.
 
 
 to run the project :
