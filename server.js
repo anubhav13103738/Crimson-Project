@@ -16,7 +16,7 @@ var adsdb;
 var jsonobj;
 
 
-mongoClient.connect('mongodb://root:root@ds161487.mlab.com:61487/crimson',(err,database)=> {
+mongoClient.connect(process.env.MONGOURI,(err,database)=> {
     if(err)console.log('can\'t connect ' + err);
 else
 {
